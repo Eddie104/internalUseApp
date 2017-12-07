@@ -1,14 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.tomato"
+    package="com.internaluseapp"
     android:versionCode="1"
     android:versionName="1.0">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"  />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"  />
-    <uses-permission android:name="android.permission.GET_TASKS"  />
 
     <uses-sdk
         android:minSdkVersion="16"
@@ -20,18 +16,6 @@
       android:label="@string/app_name"
       android:icon="@mipmap/ic_launcher"
       android:theme="@style/AppTheme">
-        <meta-data android:name="JPUSH_CHANNEL" android:value="${APP_CHANNEL}"/>
-        <meta-data android:name="JPUSH_APPKEY" android:value="${JPUSH_APPKEY}"/>
-        <meta-data android:name="TD_APP_ID" android:value="CAF0C7D3D33A4FB8B9EEA580503130BC" />
-        <meta-data android:name="TD_CHANNEL_ID" android:value="tomoto" />
-
-        <service android:name="com.talkingdata.sdk.TDAntiCheatingService"
-            android:process="com.talkingdata.sdk.TDAntiCheatingService">  <!--用户质量评估Service可以配置在主进程或者单独进程-->
-            <intent-filter>
-                <action android:name="com.talkingdata.sdk.TDAntiCheatingService" />
-            </intent-filter>
-        </service>
-
       <activity
         android:name=".MainActivity"
         android:label="@string/app_name"
@@ -42,20 +26,7 @@
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
       </activity>
-
       <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
-      <!-- 微信登录 -->
-      <activity
-        android:name=".wxapi.WXEntryActivity"
-        android:label="@string/app_name"
-        android:exported="true"
-      />
-      <!-- 微信支付 -->
-      <activity
-        android:name=".wxapi.WXPayEntryActivity"
-        android:label="@string/app_name"
-        android:exported="true"
-      />
     </application>
 
 </manifest>
